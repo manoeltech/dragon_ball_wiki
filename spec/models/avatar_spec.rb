@@ -12,14 +12,17 @@
 #  weight        :integer
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  race_id       :bigint           not null
 #  user_admin_id :bigint           not null
 #
 # Indexes
 #
+#  index_avatars_on_race_id        (race_id)
 #  index_avatars_on_user_admin_id  (user_admin_id)
 #
 # Foreign Keys
 #
+#  fk_rails_...  (race_id => races.id)
 #  fk_rails_...  (user_admin_id => user_admins.id)
 #
 require 'rails_helper'
