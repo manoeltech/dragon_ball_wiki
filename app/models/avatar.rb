@@ -30,4 +30,8 @@ class Avatar < ApplicationRecord
   belongs_to :race
 
   enum gender: { male: 0, female: 1 }
+  enum status: { inactive: 0, active: 1 }
+
+  validates :name, :gender, :date_of_birth, :status, presence: true
+  validates :ki, :weight, numericality: { greater_than: 0 }
 end
