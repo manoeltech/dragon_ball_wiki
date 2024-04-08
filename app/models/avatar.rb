@@ -25,5 +25,5 @@
 class Avatar < ApplicationRecord
   belongs_to :user_admin
 
-  enum gender: {inactive: 0, active: 1}
+  enum gender: { inactive: 0, active: 1 }
 end
