@@ -1,0 +1,47 @@
+<div id="<%= dom_id avatar %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= avatar.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Ki:</strong>
+    <%= avatar.ki %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= avatar.description %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Gender:</strong>
+    <%= avatar.gender %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Weight:</strong>
+    <%= avatar.weight %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Date of birth:</strong>
+    <%= avatar.date_of_birth %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Status:</strong>
+    <%= avatar.status %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">User admin:</strong>
+    <%= avatar.user_admin_id %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this avatar", avatar, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this avatar", edit_avatar_path(avatar), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

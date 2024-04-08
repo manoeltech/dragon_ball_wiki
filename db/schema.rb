@@ -10,9 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_08_215107) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_08_221925) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "avatars", force: :cascade do |t|
+    t.string "name"
+    t.integer "ki"
+    t.text "description"
+    t.integer "gender"
+    t.integer "weight"
+    t.date "date_of_birth"
+    t.integer "status", default: 1
+    t.bigint "user_admin_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_admin_id"], name: "index_avatars_on_user_admin_id"
+  end
 
   create_table "user_admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +40,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_08_215107) do
     t.index ["reset_password_token"], name: "index_user_admins_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "avatars", "user_admins"
 end
