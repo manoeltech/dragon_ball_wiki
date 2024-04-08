@@ -8,7 +8,7 @@
 #  gender        :integer
 #  ki            :integer
 #  name          :string
-#  status        :integer          default(1)
+#  status        :integer          default("active")
 #  weight        :integer
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
