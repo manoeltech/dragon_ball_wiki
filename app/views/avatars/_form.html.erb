@@ -37,6 +37,11 @@
   </div>
 
   <div class="my-5">
+    <%= form.label :affiliation_id %>
+    <%= form.select :affiliation_id, Affiliation.pluck(:name, :id), class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
     <%= form.label :weight %>
     <%= form.number_field :weight, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
