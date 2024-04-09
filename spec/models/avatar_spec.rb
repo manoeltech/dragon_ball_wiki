@@ -2,26 +2,29 @@
 #
 # Table name: avatars
 #
-#  id            :bigint           not null, primary key
-#  date_of_birth :date
-#  description   :text
-#  gender        :integer
-#  ki            :integer
-#  name          :string
-#  status        :integer          default("active")
-#  weight        :integer
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  race_id       :bigint           not null
-#  user_admin_id :bigint           not null
+#  id             :bigint           not null, primary key
+#  date_of_birth  :date
+#  description    :text
+#  gender         :integer
+#  ki             :integer
+#  name           :string
+#  status         :integer          default("active")
+#  weight         :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  affiliation_id :bigint           not null
+#  race_id        :bigint           not null
+#  user_admin_id  :bigint           not null
 #
 # Indexes
 #
-#  index_avatars_on_race_id        (race_id)
-#  index_avatars_on_user_admin_id  (user_admin_id)
+#  index_avatars_on_affiliation_id  (affiliation_id)
+#  index_avatars_on_race_id         (race_id)
+#  index_avatars_on_user_admin_id   (user_admin_id)
 #
 # Foreign Keys
 #
+#  fk_rails_...  (affiliation_id => affiliations.id)
 #  fk_rails_...  (race_id => races.id)
 #  fk_rails_...  (user_admin_id => user_admins.id)
 #

@@ -65,6 +65,6 @@ class AvatarsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def avatar_params
-      params.require(:avatar).permit(:name, :ki, :description, :gender, :weight, :date_of_birth, :status, :user_admin_id, :race_id)
+      params.require(:avatar).permit(:name, :ki, :description, :gender, :weight, :date_of_birth, :status, :user_admin_id, :race_id, :affiliation_id)
     end
 end
