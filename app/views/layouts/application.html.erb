@@ -22,8 +22,10 @@
           </div>
           <div class="flex items-center">
             <ul class="flex text-white">
-              <li class="mr-4"><a href="#" class="hover:text-yellow-400">Personagens</a></li>
-              <li class="mr-4"><a href="#" class="hover:text-yellow-400">Categorias</a></li> 
+              <li class="mr-4"><%= link_to "Personagens", avatars_path, class:"hover:text-yellow-400"%></li>
+              <li class="mr-4"><%= link_to "Raças", races_path, class:"hover:text-yellow-400"%></li> 
+              <li class="mr-4"><%= link_to "Equipes", affiliations_path, class:"hover:text-yellow-400"%></li>
+              <li class="mr-4"><%= link_to "Ranking", "#", class:"hover:text-yellow-400"%></li>
             </ul>
             <%= button_to "Logout", destroy_user_admin_session_path, method: :delete, :class => 'navbar-link bg-yellow-400 hover:bg-yellow-300 text-red-500 font-bold py-2 px-4 rounded'  %>
           </div>
