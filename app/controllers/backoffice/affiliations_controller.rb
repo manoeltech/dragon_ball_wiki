@@ -1,4 +1,4 @@
-class AffiliationsController < ApplicationController
+class Backoffice::AffiliationsController < ApplicationController
   before_action :set_affiliation, only: %i[ show edit update destroy ]
 
   # GET /affiliations or /affiliations.json

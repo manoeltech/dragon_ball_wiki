@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  resources :affiliations
-  resources :races
-  resources :avatars
-  devise_for :user_admins
+  namespace "backoffice" do
+    resources :affiliations
+    resources :races
+    resources :avatars
+    devise_for :user_admins, :controllers => { :sessions => "backoffice/sessions" }
+    root "dashboard#index"
+  end
 
   root "home#index"
 end

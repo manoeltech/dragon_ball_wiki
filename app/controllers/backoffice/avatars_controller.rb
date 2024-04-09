@@ -1,4 +1,4 @@
-class AvatarsController < ApplicationController
+class Backoffice::AvatarsController < ApplicationController
   before_action :set_avatar, only: %i[ show edit update destroy ]
 
   # GET /avatars or /avatars.json
