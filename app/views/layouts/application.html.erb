@@ -12,23 +12,59 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-          <div class="container">
-            <p class="navbar-text pull-right">
-              <% if user_admin_signed_in? %>
-                Logged in as <strong><%= current_user_admin.email %></strong>.
-                <%= link_to 'Edit profile', edit_user_admin_registration_path, :class => 'navbar-link' %> |
-                <%= link_to "Logout", destroy_user_admin_session_path, method: :delete, :class => 'navbar-link'  %>
-              <% else %>
-                <%= link_to "Sign up", new_user_admin_registration_path, :class => 'navbar-link'  %> |
-                <%= link_to "Login", new_user_admin_session_path, :class => 'navbar-link'  %>
-              <% end %>
-            </p>
+    <% if user_admin_signed_in? %>
+      <nav class="bg-red-500 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+          <div class="flex items-center">
+            <%= link_to root_path do %>
+              <%= image_tag("dragon-ball-logo.png", alt:"Logo Dragon Ball", class:"h-14 mr-8") %> 
+            <% end %>
+          </div>
+          <div class="flex items-center">
+            <ul class="flex text-white">
+              <li class="mr-4"><a href="#" class="hover:text-yellow-400">Personagens</a></li>
+              <li class="mr-4"><a href="#" class="hover:text-yellow-400">Categorias</a></li> 
+            </ul>
+            <%= button_to "Logout", destroy_user_admin_session_path, method: :delete, :class => 'navbar-link bg-yellow-400 hover:bg-yellow-300 text-red-500 font-bold py-2 px-4 rounded'  %>
           </div>
         </div>
-      </div>
+      </nav>
+      <main class="container mx-auto mt-28 px-5 flex">
+        <div class="navbar navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container">
+              <p class="navbar-text pull-right">
+                <% else %>
+                <nav class="bg-red-500 py-4">
+                      <div class="container mx-auto flex justify-between items-center">
+                        <div class="flex items-center">
+                          <%= link_to root_path do %>
+                            <%= image_tag("dragon-ball-logo.png", alt:"Logo Dragon Ball", class:"h-14 mr-8") %> 
+                          <% end %>
+                        <!-- TODO: Incluir logo
+                          <ul class="flex text-white">
+                            <li class="mr-4"><a href="#" class="hover:text-yellow-400">Personagens</a></li>
+                            <li class="mr-4"><a href="#" class="hover:text-yellow-400">Categorias</a></li> 
+                          </ul> -->
+                        </div>
+                        <div class="flex items-center">
+                          <div class="flex items-center bg-white rounded-full px-6 py-1 shadow-md mr-4">
+                            <input type="text" placeholder="Pesquisar" class="bg-transparent focus:outline-none w-full border-none">
+                            <button type="submit" class="focus:outline-none">
+                              <svg class="h-4 w-4 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-5.2-5.2M15 10a5 5 0 100-10 5 5 0 000 10z"/>
+                              </svg>
+                            </button>
+                          </div>
+                          <%= link_to "Login", new_user_admin_session_path, method: :delete, :class => 'navbar-link bg-yellow-400 hover:bg-yellow-300 text-red-500 font-bold py-2 px-4 rounded'  %>
+                        </div>
+                      </div>
+                    </nav>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
       <%= yield %>
     </main>
   </body>
