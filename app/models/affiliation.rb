@@ -10,4 +10,7 @@
 #
 class Affiliation < ApplicationRecord
   has_many :avatars
+  enum status: { inactive: 0, active: 1 }
+  validates :name, presence: true
+  validates_uniqueness_of :name
 end
