@@ -1,3 +1,14 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user_admin!
+
+  layout :layout
+
+  private
+
+  def layout
+    if devise_controller? && devise_mapping.name == :backoffice
+      "backoffice"
+    else
+      "application"
+    end
+  end
 end
