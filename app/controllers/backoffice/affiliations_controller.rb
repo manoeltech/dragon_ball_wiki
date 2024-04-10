@@ -25,7 +25,7 @@ class Backoffice::AffiliationsController < ApplicationController
 
     respond_to do |format|
       if @affiliation.save
-        format.html { redirect_to affiliation_url(@affiliation), notice: "Affiliation was successfully created." }
+        format.html { redirect_to backoffice_affiliation_url(@affiliation), notice: "Affiliation was successfully created." }
         format.json { render :show, status: :created, location: @affiliation }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class Backoffice::AffiliationsController < ApplicationController
   def update
     respond_to do |format|
       if @affiliation.update(affiliation_params)
-        format.html { redirect_to affiliation_url(@affiliation), notice: "Affiliation was successfully updated." }
+        format.html { redirect_to backoffice_affiliation_url(@affiliation), notice: "Affiliation was successfully updated." }
         format.json { render :show, status: :ok, location: @affiliation }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class Backoffice::AffiliationsController < ApplicationController
     @affiliation.destroy
 
     respond_to do |format|
-      format.html { redirect_to affiliations_url, notice: "Affiliation was successfully destroyed." }
+      format.html { redirect_to backoffice_affiliations_url, notice: "Affiliation was successfully destroyed." }
       format.json { head :no_content }
     end
   end
