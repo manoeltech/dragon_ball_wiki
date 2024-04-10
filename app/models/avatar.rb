@@ -38,4 +38,6 @@ class Avatar < ApplicationRecord
 
   validates :name, :gender, :date_of_birth, :status, presence: true
   validates :ki, :weight, numericality: { greater_than: 0 }
+
+  has_one_attached :image
 end
