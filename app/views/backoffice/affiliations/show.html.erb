@@ -6,10 +6,10 @@
 
     <%= render @affiliation %>
 
-    <%= link_to "Edit this affiliation", edit_affiliation_path(@affiliation), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this affiliation", edit_backoffice_affiliation_path(@affiliation), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">
-      <%= button_to "Destroy this affiliation", affiliation_path(@affiliation), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+      <%= button_to "Destroy this affiliation", backoffice_affiliation_path(@affiliation), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
     </div>
-    <%= link_to "Back to affiliations", affiliations_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Back to affiliations", backoffice_affiliations_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
 </div>
