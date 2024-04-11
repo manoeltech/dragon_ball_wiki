@@ -57,6 +57,10 @@ class Backoffice::AvatarsController < ApplicationController
     end
   end
 
+  def ranking
+    @avatars = Avatar.all.order(ki: :desc)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_avatar
