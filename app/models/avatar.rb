@@ -40,4 +40,26 @@ class Avatar < ApplicationRecord
   validates :ki, :weight, numericality: { greater_than: 0 }
 
   has_one_attached :image
+
+
+  def self.export_to_csv
+    
+    headers = [
+      "Id", "Nome", "Ki", "Data de Nascimento", "Descrição",
+      "Sexo", "Status", "Peso", "Criado em", "Equipe", "Raça"
+    ]
+    
+    avatars = Avatar.all
+
+    CSV.generate do |csv|
+      csv << headers
+      avatars.each do |avatar|
+        csv << [
+          avatar.id, avatar.name, avatar.ki, avatar.date_of_birth, avatar.description,
+          avatar.gender, avatar.status, avatar.weight, avatar.created_at,
+          avatar.affiliation.name, avatar.race.name
+        ]
+      end
+    end
+  end
 end
