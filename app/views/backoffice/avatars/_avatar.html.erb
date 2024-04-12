@@ -1,41 +1,42 @@
 <div id="<%= dom_id avatar %>">
+  
   <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
+    <div class="font-medium mb-1">Name:</div>
     <%= avatar.name %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Ki:</strong>
+    <div class="font-medium mb-1">Ki:</div>
     <%= avatar.ki %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
-    <%= avatar.description %>
+    <div class="font-medium mb-1">Description:</div>
+    <%= formatter_break_line(avatar.description) %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Gender:</strong>
+    <div class="font-medium mb-1">Gender:</div>
     <%= avatar.gender %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Weight:</strong>
-    <%= avatar.weight %>
+    <div class="font-medium mb-1">Weight:</div>
+    <%= avatar.formatter_kg %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Date of birth:</strong>
+    <div class="font-medium mb-1">Date of birth:</div>
     <%= avatar.date_of_birth %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Status:</strong>
+    <div class="font-medium mb-1">Status:</div>
     <%= avatar.status %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">User admin:</strong>
+    <div class="font-medium mb-1">User admin:</div>
     <%= avatar.user_admin_id %>
   </p>
 

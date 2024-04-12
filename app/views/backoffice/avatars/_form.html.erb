@@ -11,62 +11,71 @@
     </div>
   <% end %>
 
-  <div class="my-5">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="flex grid grid-cols-2 my-10 gap-4 my-5">
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+
+    <div>
+      <%= form.label :ki %>
+      <%= form.number_field :ki, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
   </div>
 
-  <div class="my-5">
-    <%= form.label :ki %>
-    <%= form.number_field :ki, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="flex grid grid-cols-2 gap-4 my-10 items-center form-group">
+    <div>
+      <%= form.label :gender %>
+      <%= form.select :gender, Avatar.genders.keys, { prompt: 'Selecione gender' }, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full appearance-none bg-white" %>
+    </div>
+
+    <div>
+      <%= form.label :race_id %>
+      <%= form.select :race_id, Race.pluck(:name, :id), { prompt: 'Selecione race' }, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full appearance-none bg-white" %>
+    </div>
   </div>
 
-  <div class="my-5">
-    <%= form.label :description %>
-    <%= form.text_area :description, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+
+  <div class="flex grid grid-cols-2 gap-4 my-10 items-center form-group">
+    <div>
+      <%= form.label :status %>
+      <%= form.select :status, Avatar.statuses.keys, { prompt: 'Selecione status' }, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full appearance-none bg-white" %>
+    </div>
+
+    <div>
+      <%= form.label :affiliation_id %>
+      <%= form.select :affiliation_id, Affiliation.pluck(:name, :id), { prompt: 'Selecione affiliation' }, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full appearance-none bg-white" %>
+    </div>
   </div>
 
-  <div class="my-5">
-    <%= form.label :gender %>
-    <%= form.select :gender, Avatar.genders.keys, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+
+  <div class="flex grid grid-cols-2 gap-4 my-10 items-center form-group">
+    <div>
+      <%= form.label :weight %>
+      <%= form.number_field :weight, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+    <div>
+      <%= form.label :date_of_birth %>
+      <%= form.date_field :date_of_birth, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
   </div>
 
-  <div class="my-5">
-    <%= form.label :race_id %>
-    <%= form.select :race_id, Race.pluck(:name, :id), class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :affiliation_id %>
-    <%= form.select :affiliation_id, Affiliation.pluck(:name, :id), class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :weight %>
-    <%= form.number_field :weight, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :date_of_birth %>
-    <%= form.date_field :date_of_birth, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :status %>
-    <%= form.select :status, Avatar.statuses.keys, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
+  <div class="my-10">
     <%= form.label :image %>
     <%= form.file_field :image %>
   </div>
 
-  <div class="my-5">
+  <div class="my-10 form-group">
     <%= form.label :user_admin_id %>
-    <%= form.select :user_admin_id, UserAdmin.pluck(:email, :id), class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.select :user_admin_id, UserAdmin.pluck(:email, :id), class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full appearance-none bg-white" %>
   </div>
 
-  <div class="inline">
+  <div clas="mb-10">
+    <%= form.label :description %>
+    <%= form.text_area :description, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="inline my-10">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>
