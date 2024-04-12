@@ -3,12 +3,10 @@ class Backoffice::AvatarsController < ApplicationController
 
   # GET /avatars or /avatars.json
   def index
-    @avatars = Avatar.all
-    
-    if params[:search].present?
+    if params[:search]
       @avatars = Avatar.where('lower(name) LIKE ?', "%#{params[:search]}%".downcase)
     else
-      @avatars
+      @avatars = Avatar.all
     end
   end
 
