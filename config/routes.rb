@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   end
 
   root "home#index"
+  get "/avatar/:id", to: "home#show", as: "store_front_avatar"
 end
