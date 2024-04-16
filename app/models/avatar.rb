@@ -41,6 +41,8 @@ class Avatar < ApplicationRecord
 
   has_one_attached :image
 
+  scope :avatar_active, -> { where(status: 1) }
+
 
   def self.export_to_csv
     
@@ -61,5 +63,9 @@ class Avatar < ApplicationRecord
         ]
       end
     end
+  end
+
+  def formatter_kg
+    "#{self.weight}" + " kg"
   end
 end

@@ -1,0 +1,35 @@
+<div class="bg-white">
+  <div class="lg:mx-auto lg:max-w-7xl lg:px-8">
+    <div>
+      <% @races.each do |race| %>
+        <h2 class="text-lg font-semibold text-gray-900 mb-2 mt-4"><%= race.name %></h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <% race.avatars.each do |avatar| %>
+            <div class="relative">
+              <div class="relative -mb-6 w-full overflow-x-auto pb-6">
+                <div class="group relative">
+                  <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200">
+                    <%# if race.race_image.present? %>
+                      <%#= image_tag race.race_image %>             
+                    <%# end %>
+                  </div>
+                  <div class="mt-6">
+                    <h3 class="mt-1 font-semibold text-gray-900">
+                      <%= link_to store_front_avatar_path(avatar.id) do %>
+                        <span class="absolute inset-0"></span>
+                        <%= avatar.name %>
+                      </h3>
+                      <p class="text-sm text-gray-500"><%= avatar.affiliation.name %></p>
+                      <p class="text-sm text-gray-500"><%= avatar.gender %></p>
+                      <p class="mt-1 text-white text-center bg-red-500 rounded-md">Ki: <%= avatar.ki %></p>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
